@@ -1,5 +1,4 @@
-import { actionDate } from '../types'
-const visibilityFilter = (state = 'SHOW_ALL', action: actionDate) => {
+const visibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter

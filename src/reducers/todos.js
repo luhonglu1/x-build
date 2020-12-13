@@ -1,5 +1,4 @@
-import { actionDate } from '../types'
-const todos = (state = [], action: actionDate) => {
+const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -11,7 +10,7 @@ const todos = (state = [], action: actionDate) => {
         },
       ]
     case 'TOGGLE_TODO':
-      return state.map((todo: any) =>
+      return state.map((todo) =>
         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       )
     default:

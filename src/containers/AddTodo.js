@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
-const AddTodo = ({ dispatch }: any) => {
-  let input: any
+const AddTodo = ({ dispatch }) => {
+  let input
 
   return (
     <div>

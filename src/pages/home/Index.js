@@ -36,30 +36,19 @@ import data from '../../data/sideList'
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
 
-interface listItem {
-  id: number
-  name: string
-  url: string
-  parentId: number
-  perms: string
-  icon: string
-  sort: number
-  children: listItem[]
-}
-
 class Home extends React.Component {
   state = {
-    collapsed: false as boolean,
-    list: [] as listItem[],
-    url: '' as string,
+    collapsed: false,
+    list: [],
+    url: '',
   }
 
-  onCollapse = (collapsed: any) => {
+  onCollapse = (collapsed) => {
     console.log(collapsed)
     this.setState({ collapsed })
   }
 
-  goPage(url: string) {
+  goPage(url) {
     console.log('跳转地址：', url)
     this.setState({
       url,
@@ -67,7 +56,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    let res = (await AJAXmock(data)) as any
+    let res = await AJAXmock(data)
     if (res.success) {
       this.setState({
         list: res.data.menus,
@@ -77,7 +66,7 @@ class Home extends React.Component {
     }
   }
 
-  shouldComponentUpdate(prevProp: any, prevState: any) {
+  shouldComponentUpdate(prevProp, prevState) {
     if (prevState.url === this.state.url && this.state.url !== '') {
       return false
     }

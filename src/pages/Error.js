@@ -1,7 +1,7 @@
 import React from 'react'
 
 class Error extends React.Component {
-  constructor(props: any) {
+  constructor(props) {
     super(props)
     this.state = {}
   }

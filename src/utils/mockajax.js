@@ -1,4 +1,4 @@
-export const AJAXmock = (data: any, num = 0.5, successFlag = true) => {
+export const AJAXmock = (data, num = 0.5, successFlag = true) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       if (successFlag) {
